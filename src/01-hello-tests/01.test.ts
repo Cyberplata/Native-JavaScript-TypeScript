@@ -1,4 +1,4 @@
-import {mult, splitIntoWords, sum} from "./01";
+import {division, exponentiation, mult, splitIntoWords, subtraction, sum} from "./01";
 
 //data
 // let a = 1;
@@ -8,7 +8,7 @@ let a: number;
 let b: number;
 let c: number;
 
-beforeEach( () => {
+beforeEach( () => { // Перед каждым
     a = 1;
     b = 2;
     c = 3;
@@ -34,6 +34,39 @@ test('multiply should be correct', () => {
     expect(result1).toBe(2);
     expect(result2).toBe(6);
 })
+
+test('subtraction should be correct', () => {
+    //action
+    const result1 = subtraction(a, b, c);
+    const result2 = subtraction(b, c, a);
+
+    //expect result
+    expect(result1).toBe(-4);
+    expect(result2).toBe(-2);
+})
+
+test('division should be correct', () => {
+    //action
+    const result1 = division(a, b);
+    b = 300;
+    const result2 = division(b, c);
+
+    //expect result
+    expect(result1).toBe(0.5);
+    expect(result2).toBe(100);
+})
+
+test('exponentiation should be correct', () => {
+    //action
+    a = 10;
+    const result1 = exponentiation(a, b);
+    const result2 = exponentiation(b, c);
+
+    //expect result
+    expect(result1).toBe(100);
+    expect(result2).toBe(8);
+})
+
 
 test('splitting into words should be correct', () => {
     //date
