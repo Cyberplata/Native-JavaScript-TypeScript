@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {addMoneyToBudget} from "./03";
+import {addMoneyToBudget, createMessage, repairHouse, toFireStaff, toHireStaff} from "./03";
 
 let city: CityType;
 
@@ -78,21 +78,27 @@ test('Budget should be changed for FIRE-STATION', () => {
 
 
 // 03. Создайте в том же файле ещё одну функцию, чтобы тесты прошли
-test.skip('House should be repaired', () => {
+test('House should be repaired', () => {
     repairHouse(city.houses[1]);
     expect(city.houses[1].repaired).toBeTruthy();
 });
 
 
 // 04. Создайте в том же файле еще одну функцию, чтобы тесты прошли
-test.skip('Staff should be reduced', () => {
+test('Staff should be reduced', () => {
     toFireStaff(city.governmentBuildings[0], 20);
 
     expect(city.governmentBuildings[0].staffCount).toBe(180);
 });
 // 05. Создайте в том же файле еще одну функцию, чтобы тесты прошли
-test.skip('Staff should be increased', () => {
+test('Staff should be increased', () => {
     toHireStaff(city.governmentBuildings[0], 20);
 
     expect(city.governmentBuildings[0].staffCount).toBe(220);
 });
+
+test("Greeting message should be correct for city", () => {
+    // const message = createMessage(city);
+
+    expect( createMessage(city) ).toBe("Hello New York citizens. I want you be happy. All 1000000 men")
+})
