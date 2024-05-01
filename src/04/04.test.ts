@@ -29,7 +29,9 @@ test("get only completed tasks", () => {
         {id: 4, title: 'Sugar', isDone: true},
     ]
 
-    const completedTasks = tasks.filter( task => task.isDone);
+    const completedTasks = tasks.filter( function (task) {
+      return task.isDone
+    });
     expect(completedTasks.length).toBe(2);
     expect(completedTasks[0].id).toBe(2);
     expect(completedTasks[1].id).toBe(4);
