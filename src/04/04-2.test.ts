@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {addMoneyToBudget, createMessage, repairHouse, toFireStaff, toHireStaff} from "../03/03";
+import {demolishHousesOnTheStreet, getBuildingsWithStaffCountGreaterThen} from "./04-2";
 
 let city: CityType;
 
@@ -8,6 +8,7 @@ beforeEach(() => {
         title: "New York",
         houses: [
             {
+                id: 1,
                 buildedAt: 2012,
                 repaired: false,
                 address: {
@@ -18,6 +19,7 @@ beforeEach(() => {
                 }
             },
             {
+                id: 2,
                 buildedAt: 2008,
                 repaired: false,
                 address: {
@@ -28,6 +30,7 @@ beforeEach(() => {
                 }
             },
             {
+                id: 3,
                 buildedAt: 2020,
                 repaired: false,
                 address: {
@@ -65,40 +68,20 @@ beforeEach(() => {
 })
 
 
-// 01. Создайте в отдельном файле функцию, чтобы тесты прошли
-test('Budget should be for changed fot HOSPITAL', () => {
-    addMoneyToBudget(city.governmentBuildings[0], 100000);
-    expect(city.governmentBuildings[0].budget).toBe(300000);
-});
-// 02. Тесты должны пройти
-test('Budget should be changed for FIRE-STATION', () => {
-    addMoneyToBudget(city.governmentBuildings[1], -100000);
-    expect(city.governmentBuildings[1].budget).toBe(400000);
-});
+// 01. Дополните тип HouseType (добавьте порядковый id от 1 и по возрастанию)
+// 02. Создайте в том же файле ещё одну функцию, чтобы тесты прошли
+test('House should be destroyed', () => {
+    demolishHousesOnTheStreet(city, 'Happy street');
 
+    expect(city.houses.length).toBe(2);
+    expect(city.houses[0].id).toBe(1);
 
-// 03. Создайте в том же файле ещё одну функцию, чтобы тесты прошли
-test('House should be repaired', () => {
-    repairHouse(city.houses[1]);
-    expect(city.houses[1].repaired).toBeTruthy();
-});
+})
 
+// 03. Массив строений, где работают больше 500 людей
+test('buildings with correct staff count', () => {
+    let buildings = getBuildingsWithStaffCountGreaterThen(city.governmentBuildings, 500)
 
-// 04. Создайте в том же файле еще одну функцию, чтобы тесты прошли
-test('Staff should be reduced', () => {
-    toFireStaff(city.governmentBuildings[0], 20);
-
-    expect(city.governmentBuildings[0].staffCount).toBe(180);
-});
-// 05. Создайте в том же файле еще одну функцию, чтобы тесты прошли
-test('Staff should be increased', () => {
-    toHireStaff(city.governmentBuildings[0], 20);
-
-    expect(city.governmentBuildings[0].staffCount).toBe(220);
-});
-
-test("Greeting message should be correct for city", () => {
-    // const message = createMessage(city);
-
-    expect( createMessage(city) ).toBe("Hello New York citizens. I want you be happy. All 1000000 men")
+    expect(buildings.length).toBe(1);
+    expect(buildings[0].type).toBe('FIRE-STATION')
 })
