@@ -29,6 +29,9 @@ test("get only completed tasks", () => {
         {id: 4, title: 'Sugar', isDone: true},
     ]
 
+    let a = tasks[0].isDone;
+    let b = !tasks[1].isDone
+
     const uncompletedTasks = tasks.filter( task => !task.isDone);
     expect(uncompletedTasks.length).toBe(2);
     expect(uncompletedTasks[0].id).toBe(1);
