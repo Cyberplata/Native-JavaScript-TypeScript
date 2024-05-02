@@ -43,4 +43,15 @@ const devs2 = [
 ]
 
 const devs3 = people.map(dimychTransformator)
+const devs4 = people.map( man => ([
+    { name: "Andrew Ivanov", age: 33 },
+    { name: "Alexander Petrov", age: 24 },
+    { name: "Dmitry Sidorov", age: 18 },
+]))
 
+
+const messages = people.map( man => `Hello ${man.name.split(" ")[0]}. Welcom to IT-Incubator`)
+
+export const createGreetingMessage = (people: Array<ManType>) => {
+    return people.map( man => `Hello ${man.name.split(" ")[0]}. Welcom to IT-Incubator`)
+}
