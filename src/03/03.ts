@@ -43,6 +43,6 @@ export const toHireStaff = (building: GovernmentBuildingType, staffCountToHire: 
     building.staffCount += staffCountToHire
 }
 
-export const createMessage = (props: CityType) => {
-    return `Hello ${props.title} citizens. I want you be happy. All ${props.citizensNumber} men`
+export const createMessage = (city: CityType) => {
+    return `Hello ${city.title} citizens. I want you be happy. All ${city.citizensNumber} men`
 }

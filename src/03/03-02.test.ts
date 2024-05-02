@@ -100,5 +100,5 @@ test('Staff should be increased', () => {
 test("Greeting message should be correct for city", () => {
     // const message = createMessage(city);
 
-    expect( createMessage(city) ).toBe("Hello New York citizens. I want you be happy. All 1000000 men")
+    expect( createMessage(city)).toBe("Hello New York citizens. I want you be happy. All 1000000 men")
 })
