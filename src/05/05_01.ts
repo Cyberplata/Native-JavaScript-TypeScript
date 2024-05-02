@@ -11,13 +11,11 @@ const people: Array<ManType> = [
 
 
 
-const dimychTransformator = (man: ManType) => {
-    return {
+const dimychTransformator = (man: ManType) => ({
         stack: ["css", "html", "js", "tdd", "react"],
         firstName: man.name.split(" ")[0],
         lastName: man.name.split(" ")[1]
-    }
-}
+})
 
 const devs1 = [
     {
