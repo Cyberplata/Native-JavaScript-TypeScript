@@ -19,18 +19,18 @@ export type PropsType = {
 }
 
 function useDimychState(m: string) {
-    return [ m, function (){}]
+    return [ m, function (){} ]
 }
-function useDimychState2(message: string) {
+function useDimychState2(m: string) {
     return {
-        m: message,
+        message: m,
         setMessage: function (){}
     }
 }
 
 export const ManComponent: React.FC<PropsType> = ({ title, man, ...props }) => {
 
-    const [message, setMessage] = useState<string>('hello')
+    const [ message, setMessage ] = useDimychState('hello')
 
     return <div>
         <h1>{title}</h1>
