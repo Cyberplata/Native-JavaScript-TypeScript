@@ -18,7 +18,7 @@ export type PropsType = {
     car: { model: string }
 }
 
-export const ManComponent: React.FC<PropsType> = ({title, man, car, food}) => {
+export const ManComponent: React.FC<PropsType> = ({title, man, ...props}) => {
 
     // const {title, man} = props;
 
@@ -26,7 +26,7 @@ export const ManComponent: React.FC<PropsType> = ({title, man, car, food}) => {
         <h1>{title}</h1>
         <hr/>
         <div>
-            {car.model}
+            {props.car.model}
         </div>
         <div>
             {man.name}
