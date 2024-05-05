@@ -18,19 +18,14 @@ export type PropsType = {
 
 export const ManComponent: React.FC<PropsType> = (props) => {
 
-    const {
-        title, man: {
-            name
-        }
-    } = props;
+    const { title, man} = props;
     // const {name} = props.man;
-
 
     return <div>
         <h1>{title}</h1>
         <hr/>
         <div>
-            {name}
+            {man.name}
         </div>
     </div>
 }
