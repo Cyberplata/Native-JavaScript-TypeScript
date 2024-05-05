@@ -35,12 +35,14 @@
     <button>2</button>
     <script>
 
-      const deleteUser = () => {
+      const deleteUserHandler = () => {
         alert('I am bad global function')
       }
-
       const btn = document.getElementById("btn1")
-      btn.onclick = deleteUser;
+      // btn.onclick = deleteUserHandler;
+      btn.addEventListener("click", deleteUserHandler); // когда у нас много событий то через addEventListener
+      btn.addEventListener("click", deleteUserHandler);
+      btn.addEventListener("click", deleteUserHandler);
 
     </script>
 
