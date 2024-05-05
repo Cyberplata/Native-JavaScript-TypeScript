@@ -43,5 +43,5 @@ test('', () => {
     expect(restLessons[0].title).toBe('3');
     expect(restLessons[0].name).toBe('react');
 
-    expect(restLessons[0]).toStrictEqual({title: "3", name: 'react'});
+    expect(restLessons[0]).toStrictEqual({ name: 'react', title: "3"});
 })
