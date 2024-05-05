@@ -16,9 +16,9 @@ export type PropsType = {
     man: ManType
 }
 
-export const ManComponent: React.FC<PropsType> = (props) => {
+export const ManComponent: React.FC<PropsType> = ({ title, man }) => {
 
-    const { title, man} = props;
+    // const { title, man } = props;
     // const {name} = props.man;
 
     return <div>
