@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {sum} from "./03/03";
 import {User} from "./06/06-callbacks";
+import {ManComponent} from "./07_Destructuring-assignment/destructuring";
 
 // var a = sum;
 
@@ -13,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <User />
+    <ManComponent />
   </React.StrictMode>
 );
 
