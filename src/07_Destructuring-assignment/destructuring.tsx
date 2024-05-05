@@ -30,7 +30,7 @@ function useDimychState2(m: string) {
 
 export const ManComponent: React.FC<PropsType> = ({ title, man, ...props }) => {
 
-    const [ message, setMessage ] = useDimychState('hello')
+    const [ message, setMessage ] = useState('hello')
 
     return <div>
         <h1>{title}</h1>
