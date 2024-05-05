@@ -32,13 +32,13 @@ test('', () => {
     const l1 = props.lessons[0];
     const l2 = props.lessons[1];
 
-    const [ls1, ...restLessons] = props.lessons;
+    const [, ls2, ...restLessons] = props.lessons;
 
     expect(l1.title).toBe('1');
     expect(l2.title).toBe('2');
 
-    expect(ls1.title).toBe('1');
+    expect(ls2.title).toBe('2');
 
-    expect(restLessons.length).toBe(2);
-    expect(restLessons[0].title).toBe('2');
+    expect(restLessons.length).toBe(1);
+    expect(restLessons[0].title).toBe('3');
 })
