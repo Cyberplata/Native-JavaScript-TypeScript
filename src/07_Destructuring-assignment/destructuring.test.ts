@@ -1,11 +1,9 @@
 
-type LessonsType = {
-    title: string
-}
+
 type ManType = {
     name: string,
     age: number,
-    lessons: Array<LessonsType>,
+    lessons: Array<{ title: string }>,
     address: {
         street: {
             title: "Nezavisimosti street"
