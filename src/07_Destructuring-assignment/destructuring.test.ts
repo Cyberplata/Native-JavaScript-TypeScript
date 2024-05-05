@@ -5,7 +5,7 @@ beforeEach(() => {
     props = {
         name: "Dimych",
         age: 32,
-        lessons: [{title: "1"}, {title: "2"}, {title: "3"}],
+        lessons: [{title: "1", name: 'css'}, {title: "2", name: 'html'}, {title: "3", name: 'react'}],
         address: {
             street: {
                 title: "Nezavisimosti street"
@@ -41,4 +41,7 @@ test('', () => {
 
     expect(restLessons.length).toBe(1);
     expect(restLessons[0].title).toBe('3');
+    expect(restLessons[0].name).toBe('react');
+
+    expect(restLessons[0]).toStrictEqual({title: "3", name: 'react'});
 })
