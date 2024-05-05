@@ -4,13 +4,19 @@ test('', ()=> {
     let props = {
         name: "Dimych",
         age: 32,
-        lessons: [{title: "1"}, {title: "2"}]
+        lessons: [{title: "1"}, {title: "2"}],
+        address: {
+            street: {
+                title: "Nezavisimosti street"
+            }
+        }
     }
 
     // const age = props.age
     // const lessons = props.lessons
 
     const {age, lessons} = props // то же самое, что написано сверху
+    const title = props.address.street.title
 
     const a = props.age
     const l = props.lessons
