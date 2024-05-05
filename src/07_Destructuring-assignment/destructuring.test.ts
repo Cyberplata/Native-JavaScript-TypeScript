@@ -31,20 +31,12 @@ test('', () => {
 
     // const age = props.age
     // const lessons = props.lessons
-
     const {age, lessons} = props // то же самое, что написано сверху
     const {title} = props.address.street
-
-    const a = props.age
-    const l = props.lessons
-
 
     expect(age).toBe(32)
     expect(lessons.length).toBe(2)
 
-
-    expect(a).toBe(32)
-    expect(l.length).toBe(2)
     expect(title).toBe("Nezavisimosti street")
 })
 
