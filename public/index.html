@@ -40,9 +40,15 @@
       }
       const btn = document.getElementById("btn1")
       // btn.onclick = deleteUserHandler;
-      btn.addEventListener("click", deleteUserHandler); // когда у нас много событий то через addEventListener
-      btn.addEventListener("click", deleteUserHandler);
-      btn.addEventListener("click", deleteUserHandler);
+      btn.addEventListener("click", () => {
+        alert('I am bad global function')
+      }); // когда у нас много событий то через addEventListener
+      btn.addEventListener("click", () => {
+        alert('I am bad global function')
+      });
+      btn.addEventListener("click", () => {
+        alert('I am bad global function')
+      });
 
     </script>
 
