@@ -1,24 +1,21 @@
-import React from 'react'
-
-// const callback = () => {
-//     alert('hey')
-// }
-//
-// window.setTimeout( callback, 1000)
-
+import React, {MouseEvent} from 'react'
 
 export const User = () => {
-
-    const deleteUser = () => {
-        alert('user should be deleted');
+    const deleteUser = (event: MouseEvent<HTMLButtonElement>) => {
+        alert(event.currentTarget.name);
     }
 
-    const saveUser = () => {
-        alert('user should be saved');
+    const onNameChanged = () => {
+        console.log("name changed")
+    }
+    const focusLostHandler = () => {
+        console.log('focus lost')
     }
 
-    return <div> Dimych
-        <button onClick={deleteUser}>delete</button>
-        <button onClick={saveUser} >save</button>
+    return <div><textarea onChange={onNameChanged} onBlur={focusLostHandler}>Dimych</textarea>
+        <input type="text"/>
+
+        <button name="delete" onClick={deleteUser}>delete</button>
+        <button name="save" onClick={deleteUser} >save</button>
     </div>
 }
