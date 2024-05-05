@@ -31,12 +31,17 @@
     <div id="root"></div>
 
     <hr/>
-    <button onclick="var a = 1; deleteUser()">1</button>
+    <button id="btn1">1</button>
     <button>2</button>
     <script>
+
       const deleteUser = () => {
         alert('I am bad global function')
       }
+
+      const btn = document.getElementById("btn1")
+      btn.onclick = deleteUser;
+
     </script>
 
     <!--
