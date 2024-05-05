@@ -1,10 +1,32 @@
 import React from "react";
 
-type PropsType = {
+export type ManType = {
+    name: string,
+    age: number,
+    lessons: Array<{ title: string }>,
+    address: {
+        street: {
+            title: "Nezavisimosti street"
+        }
+    }
+}
 
+type PropsType = {
+    title: string
+    man: ManType
 }
 
 export const ManComponent: React.FC<PropsType> = (props) => {
 
-    return <div></div>
+    const {title} = props;
+    const {name} = props.man;
+
+
+    return <div>
+        <h1>{title}</h1>
+        <hr/>
+        <div>
+            {name}
+        </div>
+    </div>
 }
