@@ -47,8 +47,9 @@
     ];
 
     const marina = students.find(s => s.id === 'id1000000'); // пробегает по всем объектам пока не найдёт
-    const tech = marina.technologies.find(t => t.id === 4);
-    tech.title = "React";
+    marina.title += " Sun"; // но это мутирующий случай
+    // const tech = marina.technologies.find(t => t.id === 4);
+    // tech.title = "React";
 
     students.find(s => s.id === 'id1000000') // в одну строку
             .marina.technologies
@@ -81,4 +82,7 @@
     studentsObj['id1000000'].technologies['4'].title = "React" // в одну строку
 
     console.log(marina2)
+
+
+    // 3
 </script>
