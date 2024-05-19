@@ -41,5 +41,11 @@ console.log(users["0"]) // Dimych
 console.log(users["map"]) // [Function: map]
 console.log(users["map"]((e) => e.toUpperCase()) ) // [ 'DIMYCH', 'NATASHA', 'VALERA', 'KATYA' ]
 
-
+// 4
+let usersObj = { //ass array
+    '0': 'Dimych',
+    '1': 'Natasha',
+    '2': 'Valera',
+    '3': 'Katya',
+}
 
