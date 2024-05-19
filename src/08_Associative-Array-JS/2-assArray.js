@@ -26,7 +26,14 @@ console.log(title1) // "Minsk"
 console.log(title2) // "Minsk"
 
 // 2
+// Создание св-в
 let city = {};
 city.title = "Minsk";
 console.log(city); //{ title: 'Minsk' }
+
+city["citizensCount"] = 100;
+console.log(city); // { title: 'Minsk', citizensCount: 100 }
+
+// 3
+let users
 
