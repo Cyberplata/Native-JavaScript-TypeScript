@@ -1,4 +1,5 @@
 // 1
+// Варианты записи
 let user1 = {
     name: "Dimych",
     age: 12,
@@ -35,5 +36,10 @@ city["citizensCount"] = 100;
 console.log(city); // { title: 'Minsk', citizensCount: 100 }
 
 // 3
-let users
+let users = ["Dimych", "Natasha", "Valera", "Katya"];
+console.log(users["0"]) // Dimych
+console.log(users["map"]) // [Function: map]
+console.log(users["map"]((e) => e.toUpperCase()) ) // [ 'DIMYCH', 'NATASHA', 'VALERA', 'KATYA' ]
+
+
 
