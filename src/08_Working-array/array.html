@@ -29,22 +29,42 @@
 
 
     // 2
-    const students = [
+    const students = [  // Обычный массив
         {id: 'id100', title: "Andrew"}, //0
         {id: 'id2', title: "Anna"}, //1
         {id: 'id4', title: "Sasha"}, //2
         //...
-        {id: 'id1000000', title: "Marina"}, //1000000
+        {
+            id: 'id1000000',
+            title: "Marina",
+            technologies: [
+                {id: 1, title: "CSS"},
+                {id: 2, title: "HTML"},
+                {id: 3, title: "JS"},
+                {id: 4, title: "Reac"},
+            ]
+        }, //1000000
     ];
 
     const marina = students.find(s => s.id === 'id1000000'); // пробегает по всем объектам пока не найдёт
+    const tech = marina.technologies.find(t => t.id === 4);
+    tech.title = "React";
 
-    const studentsObj = {
+    const studentsObj = {   //Ассоциативный массив
         'id100': {id: 'id100', title: "Andrew"},
         'id2': {id: 'id2', title: "Anna"},
         'id4': {id: 'id4', title: "Sasha"},
         //...
-        'id1000000': {id: 'id1000000', title: "Marina"}
+        'id1000000': {
+            id: 'id1000000',
+            title: "Marina",
+            technologies: [
+                {id: 1, title: "CSS"},
+                {id: 2, title: "HTML"},
+                {id: 3, title: "JS"},
+                {id: 4, title: "Reac"},
+            ]
+        }
     };
 
     const marina2 = studentsObj['id1000000'].title += " Sun"; // максимально быстрая
