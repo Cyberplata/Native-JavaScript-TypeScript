@@ -1,0 +1,53 @@
+<script>
+    // 1
+    const mentors = [
+        {"id": 'id100', "title": "Dimych", "my-salary": 10}, //0
+        {"id": 'id20222', "title": "Viktor", "my-salary": 100}, //1
+        {"id": 'id323242', "title": "Valera", "my-salary": 100}, //2
+        {"id": 'id489829898989', "title": "Artem", "my-salary": 100}, //3
+    ];
+
+    const artemId = 'id489829898989';
+
+    const mentor1 = mentors.find(m => m.id === artemId);
+    const mentor2 = mentors[3];
+
+    // let keys = Object.keys(mentor1);
+    // keys.find()
+    // console.log(keys)
+    mentor1["my-salary"] = 50;
+    console.log(mentor1.id)
+    console.log(mentor1["id"])
+
+
+    const propertyName = "title";
+    const value = "Sveta";
+
+    mentor1[propertyName] = value; // Сделали то же самое, что стандартная запись ниже
+    mentor1.title = "Sveta";
+    console.log(mentor1)
+
+
+    // 2
+    const students = [
+        {id: 'id100', title: "Andrew"}, //0
+        {id: 'id2', title: "Anna"}, //1
+        {id: 'id4', title: "Sasha"}, //2
+        //...
+        {id: 'id1000000', title: "Marina"}, //1000000
+    ];
+
+    const marina = students.find(s => s.id === 'id1000000'); // пробегает по всем объектам пока не найдёт
+
+    const studentsObj = {
+        'id100': {id: 'id100', title: "Andrew"},
+        'id2': {id: 'id2', title: "Anna"},
+        'id4': {id: 'id4', title: "Sasha"},
+        //...
+        'id1000000': {id: 'id1000000', title: "Marina"}
+    };
+
+    const marina2 = studentsObj['id1000000']; // максимально быстрая
+    marina2.title += " Sun";
+    console.log(marina2)
+</script>
