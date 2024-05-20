@@ -48,14 +48,14 @@ let usersObj = { //ass array
     '2': 'Valera',
     '3': 'Katya',
 }
-console.log(usersObj["0"]); // Dimych
-console.log(usersObj[0]); // Dimych
+// console.log(usersObj["0"]); // Dimych
+// console.log(usersObj[0]); // Dimych
 
 users["0"] = "Super Dimych"; // Super Dimych
-console.log(users); // [ 'Super Dimych', 'Natasha', 'Valera', 'Katya' ]
+// console.log(users); // [ 'Super Dimych', 'Natasha', 'Valera', 'Katya' ]
 
-usersObj[ "table" ] = "brown";
-console.log(usersObj) //
+// usersObj[ "table" ] = "brown";
+// console.log(usersObj) //
 //  {
 //     '0': 'Dimych',
 //     '1': 'Natasha',
@@ -65,7 +65,7 @@ console.log(usersObj) //
 // }
 
 usersObj[" привет как дела "] = "ХОРОШО";
-console.log(usersObj)
+// console.log(usersObj)
 /*
     {
       '0': 'Dimych',
@@ -78,11 +78,37 @@ console.log(usersObj)
 */
 
 // 5
-let usersObj = { //ass array
+let users3 = {
     '0': 'Dimych',
     '1': 'Natasha',
     '2': 'Valera',
     '3': 'Katya',
 }
 
-Object.keys(users)
+console.log(Object.keys(users3)) // ['0', '1', '2', '3' ]
+console.log(Object.values(users3)) // [ 'Dimych', 'Natasha', 'Valera', 'Katya' ]
+
+users3[null] = "asasa"
+console.log(users3)
+/*
+{
+  '0': 'Dimych',
+  '1': 'Natasha',
+  '2': 'Valera',
+  '3': 'Katya',
+  null: 'asasa'
+}
+*/
+
+users3[ {} ] = "hello";
+console.log(users3)
+/*
+{
+  '0': 'Dimych',
+  '1': 'Natasha',
+  '2': 'Valera',
+  '3': 'Katya',
+  null: 'asasa',
+  '[object Object]': 'hello'
+}
+*/
