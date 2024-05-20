@@ -112,3 +112,11 @@ console.log(users3)
   '[object Object]': 'hello'
 }
 */
+
+// 6
+let a = {}
+for(let i=0; i<1000; i++) {
+    a[i] = "yo"
+}
+// console.log(a);// {0: "yo", 1: "yo", ... , 999: "yo"}
+// console.log(a[999]) // "yo"
