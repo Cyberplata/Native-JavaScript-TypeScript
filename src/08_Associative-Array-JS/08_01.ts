@@ -31,7 +31,15 @@ export const users: UsersType = {
 // users[1] //O(1)
 
 let user = {id: 100500, name: 'Igor'};
-users[user.id] = user;
+users[user.id] = user; // Добавления пользователя моментально быстро и просто
+delete users[user.id]
+users[user.id].name = 'Vitya'
+
+let a = {a: 1, b: 2, c: 3}
+delete a // false
+delete a.a // a = {b: 2, c: 3}
+delete a.c // a = {b: 2}
+
 
 export const usersArray = [
     {id: 101, name: 'Dimych'},
@@ -41,3 +49,6 @@ export const usersArray = [
 ]
 usersArray.find(u => u.id === 1) // O(N)
 // usersArray.findIndex()
+// usersArray.push(user); // Добавления пользователя мутирующий метод
+// let usersCopy = [...usersArray.filter(), user] // Добавления пользователя иммутабельно
+// let usersArray = usersArray.filter(u => u.id !== user.id)
