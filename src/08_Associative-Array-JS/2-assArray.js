@@ -23,23 +23,23 @@ let user2 = {
 let title1 = user1.address.city.title;
 let title2 = user2["address"]["city"]["title"];
 
-console.log(title1) // "Minsk"
-console.log(title2) // "Minsk"
+// console.log(title1) // "Minsk"
+// console.log(title2) // "Minsk"
 
 // 2
 // Создание св-в
 let city = {};
 city.title = "Minsk";
-console.log(city); //{ title: 'Minsk' }
+// console.log(city); //{ title: 'Minsk' }
 
 city["citizensCount"] = 100;
-console.log(city); // { title: 'Minsk', citizensCount: 100 }
+// console.log(city); // { title: 'Minsk', citizensCount: 100 }
 
 // 3
 let users = ["Dimych", "Natasha", "Valera", "Katya"];
-console.log(users["0"]) // Dimych
-console.log(users["map"]) // [Function: map]
-console.log(users["map"]((e) => e.toUpperCase()) ) // [ 'DIMYCH', 'NATASHA', 'VALERA', 'KATYA' ]
+// console.log(users["0"]) // Dimych
+// console.log(users["map"]) // [Function: map]
+// console.log(users["map"]((e) => e.toUpperCase()) ) // [ 'DIMYCH', 'NATASHA', 'VALERA', 'KATYA' ]
 
 // 4
 let usersObj = { //ass array
@@ -48,4 +48,41 @@ let usersObj = { //ass array
     '2': 'Valera',
     '3': 'Katya',
 }
+console.log(usersObj["0"]); // Dimych
+console.log(usersObj[0]); // Dimych
 
+users["0"] = "Super Dimych"; // Super Dimych
+console.log(users); // [ 'Super Dimych', 'Natasha', 'Valera', 'Katya' ]
+
+usersObj[ "table" ] = "brown";
+console.log(usersObj) //
+//  {
+//     '0': 'Dimych',
+//     '1': 'Natasha',
+//     '2': 'Valera',
+//     '3': 'Katya',
+//     table: 'brown'
+// }
+
+usersObj[" привет как дела "] = "ХОРОШО";
+console.log(usersObj)
+/*
+    {
+      '0': 'Dimych',
+      '1': 'Natasha',
+      '2': 'Valera',
+      '3': 'Katya',
+      table: 'brown',
+      ' привет как дела ': 'ХОРОШО'
+    }
+*/
+
+// 5
+let usersObj = { //ass array
+    '0': 'Dimych',
+    '1': 'Natasha',
+    '2': 'Valera',
+    '3': 'Katya',
+}
+
+Object.keys(users)
