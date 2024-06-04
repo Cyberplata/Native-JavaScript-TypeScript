@@ -52,25 +52,28 @@ test('value type test', () => {
 })
 
 test('reference type test objects', () => {
+    const address = {
+        title: 'Minsk'
+    }
+
     let user = {
         name: 'Dimych',
         age: 32,
-        address: {
-            title: 'Minsk'
-        }
+        address: address
+
     }
 
-    let addr = user.address
+    // let addr = user.address
 
     let user2: UserType = {
         name: "Natasha",
         age: 30,
-        address: user.address
+        address: address
     }
 
-    user2.address.title = 'Kanary';
+    address.title = 'Minsk city';
 
     expect(user.address).toBe(user2.address)
-    expect(user.address.title).toBe('Kanary')
+    expect(user.address.title).toBe('Minsk city')
 })
 
