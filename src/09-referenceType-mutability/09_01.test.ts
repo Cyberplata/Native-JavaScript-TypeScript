@@ -5,13 +5,17 @@ function icreaseAge(u: UserType) {
 type UserType = {
     name: string
     age: number
+    address: {title: string}
 }
 
 test('reference type test', () => {
 
     let user = {
         name: 'Dimych',
-        age: 32
+        age: 32,
+        address: {
+            title: 'Minsk'
+        }
     }
     icreaseAge(user)
 
@@ -33,8 +37,40 @@ test('array test', () => {
             age: 32
         }
     ]
-    let admins = users
+    const admins = users
     admins.push({name: 'Bandyugan', age: 10})
 
     expect(users[2]).toEqual({name: 'Bandyugan', age: 10})
 })
+
+test('value type test', () => {
+    let usersCount = 100;
+    let adminsCount = usersCount
+    adminsCount++;
+
+    expect(users[2]).toEqual({name: 'Bandyugan', age: 10})
+})
+
+test('reference type test objects', () => {
+    let user = {
+        name: 'Dimych',
+        age: 32,
+        address: {
+            title: 'Minsk'
+        }
+    }
+
+    let addr = user.address
+
+    let user2: UserType = {
+        name: "Natasha",
+        age: 30,
+        address: user.address
+    }
+
+    user2.address.title = 'Kanary';
+
+    expect(user.address).toBe(user2.address)
+    expect(user.address.title).toBe('Kanary')
+})
+
