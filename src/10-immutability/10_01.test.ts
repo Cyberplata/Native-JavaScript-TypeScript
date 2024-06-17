@@ -2,9 +2,10 @@ import {UserType} from './10_01.'
 
 function makeHairStyle(u: UserType, power: number) {
     const copy = {
-        ...u
+        ...u,
+        hair: u.hair / power
     }
-    copy.hair = u.hair / power
+    // copy.hair = u.hair / power
     return copy
 }
 
