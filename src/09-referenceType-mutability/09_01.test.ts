@@ -111,6 +111,6 @@ test('sort array test', () => {
 })
 
 function passportist(letters: any){
-    letters.sort();
-    console.log(letters);
+    const copy = [...letters].sort();
+    console.log(copy);
 }
