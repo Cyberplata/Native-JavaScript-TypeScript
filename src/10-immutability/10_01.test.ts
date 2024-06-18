@@ -2,7 +2,7 @@ import {
     addNewBooksToUser, addNewCompanies,
     makeHairStyle,
     moveUser,
-    moveUserToOtherHouse, removeBook, updateBook,
+    moveUserToOtherHouse, removeBook, updateBook, updateCompanyTitle,
     upgradeUserLaptop,
     UserType,
     UserWithBooksType,
@@ -166,7 +166,7 @@ test('remove js book', () => {
     expect(user.books.length).toBe(4)
 })
 
-test('companies!!!', () => {
+test('add new company!!!', () => {
     let user: UserWithLaptopType & WithCompaniesType = {
         name: 'Dimych',
         hair: 32,
@@ -189,5 +189,32 @@ test('companies!!!', () => {
     expect(user.laptop).toBe(userCopy.laptop)
     expect(user.address).toBe(userCopy.address)
     expect(user.companies).not.toBe(userCopy.companies)
+
+})
+
+test('update company title epam', () => {
+    let user: UserWithLaptopType & WithCompaniesType = {
+        name: 'Dimych',
+        hair: 32,
+        address: {
+            city: 'Minsk',
+            house: 12
+        },
+        laptop: {
+            title: 'ZenBook'
+        },
+        companies: [
+            { id: 1, title: 'Епам'},
+            { id: 2, title: 'IT-INCUBATOR'},
+        ]
+    }
+
+    const userCopy = updateCompanyTitle(user, 1, 'EPAM')
+
+    expect(user).not.toBe(userCopy)
+    expect(user.address).toBe(userCopy.address)
+    expect(user.laptop).toBe(userCopy.laptop)
+    expect(user.companies).not.toBe(userCopy.companies)
+    expect(userCopy.companies[0].title).toBe('EPAM')
 
 })
