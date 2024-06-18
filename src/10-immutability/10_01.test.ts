@@ -117,5 +117,4 @@ test('add new books to user', () => {
     expect(user.books).not.toBe(userCopy.books)
     expect(userCopy.books[4]).toBe('ts')
     expect(user.books.length).toBe(4)
-
 })
