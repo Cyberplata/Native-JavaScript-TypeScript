@@ -94,9 +94,11 @@ export const updateCompanyTitle = (user: WithCompaniesType,
                                    newId: number,
                                    newTitle: string) => ({
     ...user,
-    companies: user.companies.map(c => c.id === newId
-        ? {...c, title: newTitle}
-        : c
+    companies: user.companies.map(c => {
+            if (c.id === newId) {
+                return {...c, title: newTitle}
+            } else return c
+        }
     )
 })
 
