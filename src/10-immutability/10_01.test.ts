@@ -209,7 +209,7 @@ test('update company title epam', () => {
         ]
     }
 
-    const userCopy = updateCompanyTitle(user, 1, 'EPAM')
+    const userCopy = updateCompanyTitle(user, 1, 'EPAM') as UserWithLaptopType & WithCompaniesType
 
     expect(user).not.toBe(userCopy)
     expect(user.address).toBe(userCopy.address)

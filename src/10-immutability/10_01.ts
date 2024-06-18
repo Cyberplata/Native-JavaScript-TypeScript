@@ -90,10 +90,13 @@ export const addNewCompanies = (u: UserWithLaptopType & WithCompaniesType,
     ]
 })
 
-export const updateCompanyTitle = (u: UserWithLaptopType & WithCompaniesType,
+export const updateCompanyTitle = (user: WithCompaniesType,
                                    newId: number,
                                    newTitle: string) => ({
-    ...u,
-    companies: u.companies.map(c => c.id === newId ? {...c, title: newTitle} : c)
+    ...user,
+    companies: user.companies.map(c => c.id === newId
+        ? {...c, title: newTitle}
+        : c
+    )
 })
 
