@@ -1,7 +1,7 @@
 export type UserType = {
     name: string
     hair: number
-    address: {title: string}
+    address: {city: string, house?: number}
 }
 
 export type LaptopType = {
@@ -25,8 +25,18 @@ export function moveUser(u: UserWithLaptopType, titleCity: string) {
     return {
         ...u,
         address: {
-            title: titleCity
-        },
-        laptop: u.laptop
+            ...u.address,
+            city: titleCity
+        }
+    }
+}
+
+export function upgradeUserLaptop(u:UserWithLaptopType, titleLaptop: string) {
+    return {
+        ...u,
+        laptop: {
+            ...u.laptop,
+            title: titleLaptop
+        }
     }
 }
