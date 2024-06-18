@@ -10,7 +10,6 @@ import {
 } from './10_01'
 
 
-
 test('reference type test', () => {
     let user: UserType = {
         name: 'Dimych',
@@ -83,7 +82,7 @@ test('upgrade books', () => {
         laptop: {
             title: 'ZenBook'
         },
-        books: ['css', 'html', 'js' ,'react']
+        books: ['css', 'html', 'js', 'react']
     }
 
     const userCopy = moveUserToOtherHouse(user, 99)
@@ -106,7 +105,7 @@ test('add new books to user', () => {
         laptop: {
             title: 'ZenBook'
         },
-        books: ['css', 'html', 'js' ,'react']
+        books: ['css', 'html', 'js', 'react']
     }
 
     const userCopy = addNewBooksToUser(user, 'ts')
@@ -130,7 +129,7 @@ test('upgrade js to ts', () => {
         laptop: {
             title: 'ZenBook'
         },
-        books: ['css', 'html', 'js' ,'react']
+        books: ['css', 'html', 'js', 'react']
     }
 
     const userCopy = updateBook(user, 'js', 'ts')

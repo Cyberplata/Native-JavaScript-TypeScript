@@ -1,7 +1,7 @@
 export type UserType = {
     name: string
     hair: number
-    address: {city: string, house?: number}
+    address: { city: string, house?: number }
 }
 
 export type LaptopType = {
@@ -35,7 +35,7 @@ export function moveUser(u: UserWithLaptopType, titleCity: string) {
     }
 }
 
-export function upgradeUserLaptop(u:UserWithLaptopType, titleLaptop: string) {
+export function upgradeUserLaptop(u: UserWithLaptopType, titleLaptop: string) {
     return {
         ...u,
         laptop: {
@@ -62,10 +62,10 @@ export function addNewBooksToUser(u: UserWithLaptopType & UserWithBooksType, new
     }
 }
 
-export function updateBook(u: UserWithLaptopType & UserWithBooksType, oldBook: string, updateBook: string) {
-    return {
-        ...u,
-        books: u.books.map(b => (b === oldBook) ? updateBook : b)
-    }
-}
+export const updateBook = (u: UserWithLaptopType & UserWithBooksType,
+                           oldBook: string,
+                           newBook: string) => ({
+    ...u,
+    books: u.books.map(b => (b === oldBook) ? newBook : b)
+})
 
