@@ -109,12 +109,13 @@ test('add new books to user', () => {
         books: ['css', 'html', 'js' ,'react']
     }
 
-    const userCopy = addNewBooksToUser(user, ['ts', 'rest api'])
+    const userCopy = addNewBooksToUser(user, 'ts')
 
     expect(user).not.toBe(userCopy)
     expect(user.laptop).toBe(userCopy.laptop)
     expect(user.address).toBe(userCopy.address)
     expect(user.books).not.toBe(userCopy.books)
     expect(userCopy.books[4]).toBe('ts')
-    expect(userCopy.books[5]).toBe('rest api')
+    expect(user.books.length).toBe(4)
+
 })
