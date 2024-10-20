@@ -228,4 +228,5 @@ test('update company - ass array', () => {
 
     expect(copy['Dimych']).not.toBe(companies['Dimych'])
     expect(copy['Artem']).toBe(companies['Artem'])
+    expect(copy['Dimych'][0].title).toBe('EPAM')
 })
