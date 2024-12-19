@@ -1,3 +1,4 @@
+//  ----I----
 // 1. Функция конструктор
 // 2. С большой буквы называем желательно
 // 3. Подразумевает, что мы её вызовем через new.
@@ -21,3 +22,19 @@ console.log(action1)
 console.log(action2)
 // DeleteUserAction { type: 'DELETE-USER', payload: { userId: 121212 } }
 // DeleteUserAction { type: 'DELETE-USER', payload: { userId: 333 } }
+
+
+//  ----II----
+function User(name, site, dob) {
+    this.name = name;
+    this.site = site;
+    this.dateOfBirth = dob;
+}
+
+User.prototype.hello = function () {}
+
+const u1 = new User('Dimych', 'it-incubator.by', new Date(1988, 1, 2))
+const u2 = new User('Artem', 'it-incubator.by', new Date(1989, 10, 12))
+
+u1.hello();
+u2.hello();
