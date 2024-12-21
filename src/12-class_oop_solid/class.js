@@ -63,24 +63,29 @@ u1.name = 'Igor'
 // console.log(u1.name) // Igor!!!!
 let users = [u1, u2]
 
-users.forEach(u => u.hello())
+// users.forEach(u => u.hello())
 // I am Igor!!!! from it-incubator.by
 // I am Artem!!!! from it-incubator.by
 
 // Наследование
-class Coder extends User {
+class Coder extends User { // наследуемся от User
     constructor(name, site, dob, tech) {
-        super(name, site, dob);
-        this.tech = tech;
+        super(name, site, dob); // вызываем конструктор родителя
+        this.tech = tech; // добавляем свойство
     }
 
     code() {
         console.log(`I am ${this.name}, here is my ${this.tech} code: const sum = (a, b) => a + b`)
+    }
+
+    hello() {
+        super.hello(); // вызываем метод родителя
+        console.log("Go away") // добавляем свой функционал
     }
 }
 
 const coder1 = new Coder('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
 coder1.hello() // I am Dimych!!!! from it-incubator.by
 coder1.code() // I am Dimych!!!!, here is my c# code: const sum = (a, b) => a + b
-
+coder1.hello() // Go away
 
