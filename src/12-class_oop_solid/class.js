@@ -27,11 +27,11 @@ class User {
         // this.value = 'Platon';
     }
 
-    get name() { // через метод get получаем доступ к приватным полям
+    get name() { // через метод get мы можем получить приватное свойство
         return this.#name + '!!!!'
     }
 
-    set name(value) { // через метод set мы намерено можем переопределить приватное свойство
+    set name(value) { // через метод set мы можем изменить приватное свойство
         // if (value === 'Igor') throw new Error('Igor is not allowed name')
         this.#name = value
     }
@@ -81,6 +81,8 @@ class Coder extends User { // наследуемся от User
     hello() {
         super.hello(); // вызываем метод родителя
         console.log("Go away") // добавляем свой функционал
+        console.log("Go away " + this.name) // Go away Dimych!!!!
+        // console.log("Go away " + this.#name) // Private field '#name' must be declared in an enclosing class
     }
 }
 
