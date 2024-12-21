@@ -27,11 +27,12 @@ class User {
         // this.value = 'Platon';
     }
 
-    getName() { // через метод get получаем доступ к приватным полям
-        return this.#name
+    get name() { // через метод get получаем доступ к приватным полям
+        return this.#name + '!!!!'
     }
-    setName(value) { // через метод set мы намерено можем переопределить приватное свойство
-        if (value === 'Igor') throw new Error('Igor is not allowed name')
+
+    set name(value) { // через метод set мы намерено можем переопределить приватное свойство
+        // if (value === 'Igor') throw new Error('Igor is not allowed name')
         this.#name = value
     }
 
@@ -55,5 +56,31 @@ const u2 = new User('Artem', 'it-incubator.by', new Date(1989, 10, 12))
 // console.log(u1.#name) // SyntaxError: Private field '#name' must be declared in an enclosing class
 
 // console.log(u1.getName()) // Dimych
-u1.setName('Igor')
-console.log(u1.getName()) // Igor
+// u1.setName('Igor')
+// console.log(u1.getName()) // Igor
+
+u1.name = 'Igor'
+// console.log(u1.name) // Igor!!!!
+let users = [u1, u2]
+
+users.forEach(u => u.hello())
+// I am Igor!!!! from it-incubator.by
+// I am Artem!!!! from it-incubator.by
+
+// Наследование
+class Coder extends User {
+    constructor(name, site, dob, tech) {
+        super(name, site, dob);
+        this.tech = tech;
+    }
+
+    code() {
+        console.log(`I am ${this.name}, here is my ${this.tech} code: const sum = (a, b) => a + b`)
+    }
+}
+
+const coder1 = new Coder('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
+coder1.hello() // I am Dimych!!!! from it-incubator.by
+coder1.code() // I am Dimych!!!!, here is my c# code: const sum = (a, b) => a + b
+
+
