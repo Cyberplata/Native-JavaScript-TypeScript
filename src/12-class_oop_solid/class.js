@@ -26,6 +26,8 @@
 
 
 //  ----II----
+import React from "react";
+
 class User {
     _name = "";
 
@@ -71,7 +73,7 @@ const u2 = new User('Artem', 'it-incubator.by', new Date(1989, 10, 12))
 
 u1.name = 'Igor'
 // console.log(u1.name) // Igor!!!!
-let users = [u1, u2]
+// let users = [u1, u2]
 
 // users.forEach(u => u.hello())
 // I am Igor!!!! from it-incubator.by
@@ -100,23 +102,81 @@ class Coder extends User { // наследуемся от User
 
 //  ----IV----
 class Hacker extends Coder {
-    constructor(a,b,c,d) {
+    constructor(a, b, c, d) {
         super();
         this.tech = 'XXX'
         this._name = 'XXXX'
     }
+
     code() {
         console.log("I'll hack everything")
     }
 }
 
-// const coder1 = new Coder('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
+const coder1 = new Coder('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
 // coder1.code() // I am Dimych!!!!, here is my c# code: const sum = (a, b) => a + b
 // coder1.hello() // I am Dimych!!!! from it-incubator.by
 // coder1.hello() // Go away
 
 const hacker = new Hacker('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
 // hacker.code() // I'll hack everything
-hacker.hello()
+// hacker.hello()
 // I am XXXX from undefined
 // Go away XXXX
+
+// let users = [u1, u2, coder1, hacker]
+
+// users.forEach(u => u.hello())
+// I am Artem from it-incubator.by
+// I am Dimych from it-incubator.by
+// Go away Dimych
+// I am XXXX from undefined
+// Go away XXXX
+
+//  ----V----
+// let users = [u1, u2, coder1, hacker]
+//
+// users.forEach(u => u.hello())
+
+const arr = [1, 2]; // new Array
+
+for (let i = 0; i < arr.length; i++) {
+
+}
+
+class SuperArray extends Array {
+    get length() {
+        return 1000;
+    }
+}
+
+const arr2 = new SuperArray();
+console.log(arr2.length) // 0
+
+
+// ----VI---- Пример в реакте
+class ProfilePage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return "IT-KAMASUTRA SUBSCRIBE";
+    }
+}
+
+// @@@@@@@@@@@@@@@@@@@REACT
+
+// <ProfilePage age={1}/>
+// const comp1 = new ProfilePage({age: 1})
+// comp1.render()
+// const jsx = comp1.render()
+// jsx => html
+// comp1.componentDidMount(); // Монтирование компоненты
+
+// if (comp1.shouldComponentUpdate()) {
+// const jsx = comp1.render()
+// // jsx => html
+// // comp1.componentDidUpdate(); // Обновление компоненты
+// }
+// Патерны
