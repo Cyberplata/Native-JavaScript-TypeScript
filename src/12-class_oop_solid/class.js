@@ -27,10 +27,10 @@
 
 //  ----II----
 class User {
-    #name = "";
+    _name = "";
 
     constructor(name, site, dob) {
-        this.#name = name;
+        this._name = name;
         this.site = site;
         this.dateOfBirth = dob;
         this.counter = 0;
@@ -38,18 +38,18 @@ class User {
     }
 
     get name() { // через метод get мы можем получить приватное свойство
-        return this.#name + '!!!!'
+        return this._name + '!!!!'
     }
 
     set name(value) { // через метод set мы можем изменить приватное свойство
         // if (value === 'Igor') throw new Error('Igor is not allowed name')
-        this.#name = value
+        this._name = value
     }
 
     hello() {
         debugger
         this.counter++;
-        console.log(`I am ${this.name} from ${this.site}`)
+        console.log(`I am ${this._name} from ${this.site}`)
     }
 }
 
@@ -77,6 +77,8 @@ let users = [u1, u2]
 // I am Igor!!!! from it-incubator.by
 // I am Artem!!!! from it-incubator.by
 
+
+//  ----III----
 // Наследование
 class Coder extends User { // наследуемся от User
     constructor(name, site, dob, tech) {
@@ -85,19 +87,36 @@ class Coder extends User { // наследуемся от User
     }
 
     code() {
-        console.log(`I am ${this.name}, here is my ${this.tech} code: const sum = (a, b) => a + b`)
+        console.log(`I am ${this._name}, here is my ${this.tech} code: const sum = (a, b) => a + b`)
     }
 
     hello() {
         super.hello(); // вызываем метод родителя
-        console.log("Go away") // добавляем свой функционал
-        console.log("Go away " + this.name) // Go away Dimych!!!!
+        // console.log("Go away") // добавляем свой функционал
+        console.log("Go away " + this._name) // Go away Dimych!!!!
         // console.log("Go away " + this.#name) // Private field '#name' must be declared in an enclosing class
     }
 }
 
-const coder1 = new Coder('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
-coder1.hello() // I am Dimych!!!! from it-incubator.by
-coder1.code() // I am Dimych!!!!, here is my c# code: const sum = (a, b) => a + b
-coder1.hello() // Go away
+//  ----IV----
+class Hacker extends Coder {
+    constructor(a,b,c,d) {
+        super();
+        this.tech = 'XXX'
+        this._name = 'XXXX'
+    }
+    code() {
+        console.log("I'll hack everything")
+    }
+}
 
+// const coder1 = new Coder('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
+// coder1.code() // I am Dimych!!!!, here is my c# code: const sum = (a, b) => a + b
+// coder1.hello() // I am Dimych!!!! from it-incubator.by
+// coder1.hello() // Go away
+
+const hacker = new Hacker('Dimych', 'it-incubator.by', new Date(1988, 1, 2), 'c#')
+// hacker.code() // I'll hack everything
+hacker.hello()
+// I am XXXX from undefined
+// Go away XXXX
